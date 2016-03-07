@@ -11,7 +11,7 @@
 //#include <QGst/Quick/VideoSurface>
 
 
-#define THREAD_SCOPE
+//#define THREAD_SCOPE
 
 
 Player::Player(QQmlContext *_ctx, QObject *parent) :
