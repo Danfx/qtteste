@@ -14,7 +14,7 @@
 //#include <QGst/Quick/VideoSurface>
 
 
-class Player : public QThread
+class Player : public QObject
 {
     Q_OBJECT
 private:
@@ -22,9 +22,6 @@ private:
     QGst::PipelinePtr _pipeline;
     QGst::Quick::VideoSurface *_surface;
     QGst::ElementPtr videoSink;
-
-    QWaitCondition  wCond;
-    QMutex          mutex;
 
 public:
     explicit Player(QQmlContext* _ctx,QObject *parent = 0);
@@ -36,9 +33,6 @@ public slots:
     void play();
     void stop();
 
-    // QThread interface
-protected:
-    void run();
 };
 
 #endif // PLAYER2_H
